@@ -12,6 +12,11 @@ variable "AmiLinux" {
   }
 }
 
+variable "instance_type" {
+  default     = "t2.micro"
+  description = "instancee type"
+}
+
 variable "vpc-fullcidr" {
   default     = "192.168.0.0/16"
   description = "the vpc cdir"

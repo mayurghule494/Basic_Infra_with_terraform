@@ -1,6 +1,6 @@
 resource "aws_instance" "app1" {
   ami                         = "${lookup(var.AmiLinux, var.region)}"
-  instance_type               = "t2.micro"
+  instance_type               = "${var.instance_type}"
   associate_public_ip_address = "true"
   subnet_id                   = "${aws_subnet.PublicAZA.id}"
   vpc_security_group_ids      = ["${aws_security_group.WebServer.id}"]
